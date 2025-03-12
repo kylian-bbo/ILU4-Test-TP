@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+/home/kylian-bbo/Données/Cours/ILU4/ILU4-Test-TP/.metadata/.plugins/org.eclipse.jdt.core
+1865797976.index
+4107573200.index
+1293416447.index
