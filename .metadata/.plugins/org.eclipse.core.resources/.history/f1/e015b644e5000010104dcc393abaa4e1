@@ -55,8 +55,7 @@ public class TestBellmanFord {
 		
 		// On récupère les résultats attendus
 		line = reader.readLine();
-		
-		if (line.equals("null"))
+		if (line == "null")
 			resultatsAttendus = null;
 		else {
 			String[] results = line.split(" ");
@@ -64,7 +63,7 @@ public class TestBellmanFord {
 									  .mapToInt(Integer::parseInt)
 									  .toArray();
 		}
-				
+		
 		resultatsObtenus = graph.BellmanFordAlgo(graph, 0);
 		
 		return new int[][] {resultatsAttendus, resultatsObtenus};
@@ -81,7 +80,6 @@ public class TestBellmanFord {
 			int i = 1;
 			String line;
 			int[][] results;
-			boolean resultB;
 			
 			// Boucle de tests
 			while ((line = reader.readLine()) != null) {
@@ -89,15 +87,8 @@ public class TestBellmanFord {
 				
 				results = testGraph(reader, line);
 				
-				// On récupère si le test doit être valide ou non
-				line = reader.readLine();
-				if (line.equals("true"))
-					resultB = true;
-				else
-					resultB = false;
-					
 				// On vérifie si le résultat obtenu est égal au résulat attendu
-				if (Arrays.equals(results[0], results[1]) == resultB) { 
+				if (Arrays.equals(results[0], results[1])) { 
 					System.out.println(GREEN + "pass !" + RESET);
 					nbTestsPass++;
 				}

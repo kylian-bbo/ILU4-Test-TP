@@ -31,6 +31,7 @@ public class BellmanFord {
             edge[IndEdge].destination = destination;
             edge[IndEdge].weight = weight;	
         }
+
     }
 
     // Bellman-Ford Algorithm to find shortest paths from source to all vertices
@@ -59,6 +60,7 @@ public class BellmanFord {
             int v = graph.edge[j].destination;
             int weight = graph.edge[j].weight;
             if (dist[u] != Integer.MAX_VALUE && dist[u] + weight < dist[v]) {
+                System.out.println("Graph contains negative weight cycle");
                 return null;
             }
         }

@@ -92,12 +92,9 @@ public class TestBellmanFord {
 				// On récupère si le test doit être valide ou non
 				line = reader.readLine();
 				if (line.equals("true"))
-					resultB = true;
-				else
-					resultB = false;
 					
 				// On vérifie si le résultat obtenu est égal au résulat attendu
-				if (Arrays.equals(results[0], results[1]) == resultB) { 
+				if (Arrays.equals(results[0], results[1])) { 
 					System.out.println(GREEN + "pass !" + RESET);
 					nbTestsPass++;
 				}
