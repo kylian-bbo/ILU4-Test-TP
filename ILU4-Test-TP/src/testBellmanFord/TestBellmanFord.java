@@ -3,6 +3,7 @@ package testBellmanFord;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 import bellmanFord.BellmanFord;
@@ -14,13 +15,14 @@ public class TestBellmanFord {
 	public static String RED = "\u001B[31m";
 	public static String RESET = "\u001B[0m";
 	
-	//private static String testFilePath = "jeux_de_test.txt";
-	private static String testFilePath = "jeux_de_test_q4.txt";
+	private static String testFilePath = "jeux_de_test.txt";
+	//private static String testFilePath = "jeux_de_test_q4.txt";
+	//private static String testFilePath = "jeux_de_test_q5.txt";
 	
 	
-	// CrÃ©e un graphe Ã  partir des donnÃ©es du fichier de jeux de test
+	// Crée un graphe à partir des données du fichier de jeux de test
 	private static BellmanFord getGraph(BufferedReader reader, String line) throws IOException {
-		// On rÃ©cupÃ¨re V et E
+		// On récupère V et E
 		String[] v_e = line.split(" ");
 		int V = Integer.parseInt(v_e[0]);
 		int E = Integer.parseInt(v_e[1]);
@@ -104,20 +106,20 @@ public class TestBellmanFord {
 				}
 				else {
 					System.out.println(RED + "fail..." + RESET);
-					System.out.println("\tRÃ©sultats attendus : " + Arrays.toString(results[0]));
-					System.out.println("\tRÃ©sultats obtenus : " + Arrays.toString(results[1]));
+					System.out.println("\tRésultats attendus : " + Arrays.toString(results[0]));
+					System.out.println("\tRésultats obtenus : " + Arrays.toString(results[1]));
 				}
 				
 				nbTests++;
 				i++;
 			}
 	    } catch (IOException e) {
-	    	System.out.println("Erreur : problÃ¨me lors de la lecture du fichier de jeux de tests.");
+	    	System.out.println("Erreur : problème lors de la lecture du fichier de jeux de tests.");
 			e.printStackTrace();
 			return;
 		}
 		
-		System.out.println("\nRÃ©sultat : " + nbTestsPass + "/" + nbTests + " tests passÃ©s (" + ((double) nbTestsPass / nbTests) * 100 + "%).");
+		System.out.println("\nRsultat : " + nbTestsPass + "/" + nbTests + " tests passés (" + ((double) nbTestsPass / nbTests) * 100 + "%).");
 	}
 	
 	
